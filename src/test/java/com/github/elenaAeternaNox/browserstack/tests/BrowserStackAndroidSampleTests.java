@@ -1,4 +1,4 @@
-package tests;
+package com.github.elenaAeternaNox.browserstack.tests;
 
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
@@ -11,15 +11,14 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
 
-
 public class BrowserStackAndroidSampleTests {
     public static void main(String[] args) throws MalformedURLException, InterruptedException {
 
         DesiredCapabilities caps = new DesiredCapabilities();
 
         // Set your access credentials
-        caps.setCapability("browserstack.user", "stanislavvasenko_VbIEGO");
-        caps.setCapability("browserstack.key", "gzMbXq5ts4MJPnZs7jKK");
+        caps.setCapability("browserstack.user", "elenak_jPEpsX");
+        caps.setCapability("browserstack.key", "zx1FGzNVCDWj9pfGsYFR");
 
         // Set URL of the application under test
         caps.setCapability("app", "bs://c700ce60cf13ae8ed97705a55b8e022f13c5827c");

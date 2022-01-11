@@ -1,4 +1,4 @@
-package tests;
+package com.github.elenaAeternaNox.browserstack.tests;
 
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.ios.IOSDriver;
@@ -14,14 +14,14 @@ import java.net.URL;
 
 public class BrowserStackIosSampleTests {
 
-
     @Test
-    void searchTest() throws MalformedURLException, InterruptedException {
+    @Disabled
+    void searchTestByIos() throws MalformedURLException, InterruptedException {
         DesiredCapabilities caps = new DesiredCapabilities();
 
         // Set your access credentials
-        caps.setCapability("browserstack.user", "stanislavvasenko_VbIEGO");
-        caps.setCapability("browserstack.key", "gzMbXq5ts4MJPnZs7jKK");
+        caps.setCapability("browserstack.user", "elenak_jPEpsX");
+        caps.setCapability("browserstack.key", "zx1FGzNVCDWj9pfGsYFR");
 
         // Set URL of the application under test
         caps.setCapability("app", "bs://444bd0308813ae0dc236f8cd461c02d3afa7901d");
@@ -30,9 +30,10 @@ public class BrowserStackIosSampleTests {
         caps.setCapability("device", "iPhone XS");
         caps.setCapability("os_version", "12");
 
+
         // Set other BrowserStack capabilities
         caps.setCapability("project", "First Java Project");
-        caps.setCapability("build", "Java iOS");
+        caps.setCapability("build", "browserstack-build-1");
         caps.setCapability("name", "first_test");
 
 
@@ -40,7 +41,6 @@ public class BrowserStackIosSampleTests {
         // and desired capabilities defined above
         IOSDriver<IOSElement> driver = new IOSDriver<IOSElement>(
                 new URL("http://hub-cloud.browserstack.com/wd/hub"), caps);
-
 
         // Test case for the BrowserStack sample iOS app.
         // If you have uploaded your app, update the test case here.
@@ -53,10 +53,10 @@ public class BrowserStackIosSampleTests {
         Thread.sleep(5000);
         IOSElement textOutput = (IOSElement) new WebDriverWait(driver, 30).until(
                 ExpectedConditions.elementToBeClickable(MobileBy.AccessibilityId("Text Output")));
-        if (textOutput != null && textOutput.getText().equals("hello@browserstack.com"))
-            assert (true);
+        if(textOutput != null && textOutput.getText().equals("hello@browserstack.com"))
+            assert(true);
         else
-            assert (false);
+            assert(false);
 
         // Invoke driver.quit() after the test is done to indicate that the test is completed.
         driver.quit();

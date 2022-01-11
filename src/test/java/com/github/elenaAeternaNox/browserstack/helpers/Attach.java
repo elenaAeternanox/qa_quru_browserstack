@@ -1,4 +1,4 @@
-package helpers;
+package com.github.elenaAeternaNox.browserstack.helpers;
 
 import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Attachment;

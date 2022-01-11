@@ -1,15 +1,22 @@
-package drivers;
+package com.github.elenaAeternaNox.browserstack.drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
+import com.github.elenaAeternaNox.browserstack.mobileConfig.MobileConfig;
 import io.appium.java_client.android.AndroidDriver;
+import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class BrowserstackMobileDriver implements WebDriverProvider {
+public class BrowserStackMobileDriver implements WebDriverProvider {
 
+    public static MobileConfig mobileConfig = ConfigFactory.create(MobileConfig.class);
+
+    String userName = mobileConfig.user();
+    String key = mobileConfig.key();
+    String url = mobileConfig.url();
 
     public static URL getBrowserstackUrl() {
         try {
@@ -22,12 +29,13 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
     @Override
     public WebDriver createDriver(DesiredCapabilities desiredCapabilities) {
 
+
         // Set your access credentials
-        desiredCapabilities.setCapability("browserstack.user", "qaguru3");
-        desiredCapabilities.setCapability("browserstack.key", "PDQAwqS6GqzeNLqsj92r");
+        desiredCapabilities.setCapability("browserstack.user", userName);
+        desiredCapabilities.setCapability("browserstack.key", key);
 
         // Set URL of the application under test
-        desiredCapabilities.setCapability("app", "bs://c700ce60cf13ae8ed97705a55b8e022f13c5827c");
+        desiredCapabilities.setCapability("app", url);
 
         // Specify device and os_version for testing
         desiredCapabilities.setCapability("device", "Google Pixel 3");
@@ -35,7 +43,7 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
 
         // Set other BrowserStack capabilities
         desiredCapabilities.setCapability("project", "First Java Project");
-        desiredCapabilities.setCapability("build", "Java Android");
+        desiredCapabilities.setCapability("build", "browserstack-build-1");
         desiredCapabilities.setCapability("name", "first_test");
 
         return new AndroidDriver(getBrowserstackUrl(), desiredCapabilities);

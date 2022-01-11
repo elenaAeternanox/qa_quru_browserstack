@@ -1,11 +1,21 @@
-package helpers;
+package com.github.elenaAeternaNox.browserstack.helpers;
+
+import com.github.elenaAeternaNox.browserstack.mobileConfig.MobileConfig;
+import org.aeonbits.owner.ConfigFactory;
 
 import static io.restassured.RestAssured.given;
 
 public class Browserstack {
+
     public static String videoUrl(String sessionId) {
+
+        MobileConfig mobileConfig = ConfigFactory.create(MobileConfig.class);
+
+        String user = mobileConfig.user();
+        String key = mobileConfig.key();
+
         return given()
-                .auth().basic("qaguru3", "PDQAwqS6GqzeNLqsj92r")
+                .auth().basic(user, key)
                 .when()
                 .get("https://api-cloud.browserstack.com/app-automate/sessions/" + sessionId +".json")
                 .then()
