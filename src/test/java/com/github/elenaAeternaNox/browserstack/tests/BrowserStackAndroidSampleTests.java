@@ -3,6 +3,9 @@ package com.github.elenaAeternaNox.browserstack.tests;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -12,6 +15,9 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
 
+@Story("Android tests")
+@Feature("Android")
+@Tag("android")
 public class BrowserStackAndroidSampleTests {
 
     @Test
