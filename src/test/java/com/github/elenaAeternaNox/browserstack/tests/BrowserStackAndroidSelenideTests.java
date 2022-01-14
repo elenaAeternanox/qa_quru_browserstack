@@ -1,7 +1,9 @@
 package com.github.elenaAeternaNox.browserstack.tests;
 
+import annotations.Microservice;
 import io.appium.java_client.MobileBy;
 import io.qameta.allure.Feature;
+import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -13,11 +15,13 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 import static io.qameta.allure.Allure.step;
 
+@Owner("ekomarova")
 @Story("Android tests")
 @Feature("Android: Selenide tests")
 @Tag("selenide_android")
 public class BrowserStackAndroidSelenideTests extends TestBase {
 
+    @Microservice("Search")
     @Test
     @DisplayName("Successful search in wikipedia android app")
     void searchTestBySelenide() {
@@ -31,6 +35,7 @@ public class BrowserStackAndroidSelenideTests extends TestBase {
                         .shouldHave(sizeGreaterThan(0)));
     }
 
+    @Microservice("Settings")
     @Test
     @DisplayName("Open Settings in wikipedia android app")
     void openSettingsTest() {

@@ -1,9 +1,11 @@
 package com.github.elenaAeternaNox.browserstack.tests;
 
+import annotations.Microservice;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.qameta.allure.Feature;
+import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -17,11 +19,13 @@ import java.util.List;
 
 import static io.qameta.allure.Allure.step;
 
+@Owner("ekomarova")
 @Story("Android tests")
 @Feature("Android")
 @Tag("android")
 public class BrowserStackAndroidSampleTests {
 
+    @Microservice("Search")
     @Test
     void SearchTest() throws MalformedURLException, InterruptedException {
 

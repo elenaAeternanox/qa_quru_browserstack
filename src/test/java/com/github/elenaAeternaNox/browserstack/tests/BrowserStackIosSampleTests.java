@@ -1,9 +1,11 @@
 package com.github.elenaAeternaNox.browserstack.tests;
 
+import annotations.Microservice;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.IOSElement;
 import io.qameta.allure.Feature;
+import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Tag;
@@ -15,11 +17,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+@Owner("ekomarova")
 @Story("IOs tests")
 @Feature("IOs tests")
 @Tag("ios")
 public class BrowserStackIosSampleTests {
 
+    @Microservice("Search")
     @Test
     @Disabled
     void searchTestByIos() throws MalformedURLException, InterruptedException {
