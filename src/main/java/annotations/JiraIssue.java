@@ -1,4 +1,6 @@
-package allure;
+package annotations;
+
+import io.qameta.allure.LabelAnnotation;
 
 import java.lang.annotation.*;
 
@@ -9,7 +11,9 @@ import java.lang.annotation.*;
 @Inherited
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.METHOD, ElementType.TYPE})
-public @interface TM4J {
+@Repeatable(JiraIssues.class)
+@LabelAnnotation(name = "jira")
+public @interface JiraIssue {
 
     String value();
 
