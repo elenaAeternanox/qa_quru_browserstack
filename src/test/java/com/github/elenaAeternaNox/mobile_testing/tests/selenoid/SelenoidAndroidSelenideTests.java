@@ -62,6 +62,7 @@ public class SelenoidAndroidSelenideTests extends SelenoidTestBase {
                 }
         );
         back();
+        back();
         step("Check 'Wikipedia languages' has russian language", () ->
                 $(MobileBy.xpath(("//*[@text='English, Русский']"))).shouldBe(visible)
         );
