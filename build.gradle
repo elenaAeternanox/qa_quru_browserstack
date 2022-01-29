@@ -64,12 +64,12 @@ task selenoid_android(type: Test) {
     useJUnitPlatform {
         includeTags 'selenoid_android'
     }
-    systemProperty "deviceFarm", "selenoid"
+    systemProperty "deviceFarm", "selenoid_android"
 }
 
 task browserstack_android(type: Test) {
     useJUnitPlatform {
         includeTags 'browserstack_android'
     }
-    systemProperty "deviceFarm", "browserstack"
+    systemProperty "deviceFarm", "browserstack_android"
 }
