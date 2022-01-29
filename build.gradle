@@ -8,7 +8,7 @@ repositories {
 }
 
 def allureVersion = "2.16.1",
-    selenideVersion = "5.24.0",
+    selenideVersion = "5.25.1",
     junitVersion = "5.8.1"
 
 allure {
@@ -27,7 +27,7 @@ dependencies {
             "org.aspectj:aspectjweaver:1.9.6",
             "com.codeborne:selenide:$selenideVersion",
             "io.qameta.allure:allure-selenide:$allureVersion",
-            "io.appium:java-client:7.3.0",
+            "io.appium:java-client:7.6.0",
             "io.rest-assured:rest-assured:4.3.3",
             "org.aeonbits.owner:owner:1.0.12",
             "org.junit.jupiter:junit-jupiter-api:$junitVersion")
@@ -52,4 +52,24 @@ tasks.withType(Test) {
             exceptionFormat "short"
         }
     }
+}
+
+task selenide_android(type: Test) {
+    useJUnitPlatform {
+        includeTags 'selenide_android'
+    }
+}
+
+task selenoid_android(type: Test) {
+    useJUnitPlatform {
+        includeTags 'selenide_android'
+    }
+    systemProperty "deviceFarm", "selenoid"
+}
+
+task browserstack_android(type: Test) {
+    useJUnitPlatform {
+        includeTags 'selenide_android'
+    }
+    systemProperty "deviceFarm", "browserstack"
 }
