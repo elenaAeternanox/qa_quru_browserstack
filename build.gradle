@@ -67,13 +67,6 @@ task selenoid_android(type: Test) {
     systemProperty "deviceFarm", "selenoid_android"
 }
 
-task selenoid_android(type: Test) {
-    useJUnitPlatform {
-        includeTags 'emulator'
-    }
-    systemProperty "deviceFarm", "emulator"
-}
-
 task browserstack_android(type: Test) {
     useJUnitPlatform {
         includeTags 'browserstack_android'

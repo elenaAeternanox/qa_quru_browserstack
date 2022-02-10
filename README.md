@@ -61,16 +61,6 @@ gradle clean test -DdeviceHost=local
 allure serve build/allure-results
 ```
 
-## API tests for [reqres.in](https://reqres.in/):
-
-Contains the tests for GET and POST requests. These are the tests which check these 'handlers' functionality. They are created with special specification.
-You may look them in Allure as Suit 'ApiRequestsTest':
-
-<p align="center">
-  <img src="images/screens/Allure_reqres_in.PNG.jpg">
-</p>
-
-___
 
 ### Run tests remote with parameters:
 
