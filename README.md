@@ -155,23 +155,18 @@ Also Jira integration is implemented in the project:
 
 ___
 
-## Example of video with test running in Allure Report
-
-You may see the example of a video showing the mix rest and ui test run in Allure report.
-
-<p align="center">
-  <img src="images/screens/Test_video_example.gif">
-</p>
-
-
-___
-
 ## Notifications in Telegram channel
 
 The project is configured to send notifications about the results of launches from Jenkins to Telegram channel
 
+Tests on Browserstack:
 <p align="center">
-  <img src="images/screens/Telegram_notification.PNG">
+  <img src="images/screens/Telegram_notification_browserstack.png">
 </p>
 
+
+Tests on Selenoid:
+<p align="center">
+  <img src="images/screens/Telegram_notification_Selenoid.PNG">
+</p>
 ___
