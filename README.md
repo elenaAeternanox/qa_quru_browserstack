@@ -76,6 +76,8 @@ where:
 </p>
 
 
+___
+
 ## Results analysis
 
 The test results can be found in:
@@ -143,6 +145,9 @@ Allure TestOps is used as a storage for all tests cases (automated and manual), 
 <p align="center">
   <img src="images/screens/Allure_TestOps_test_cases.png">
 </p>
+
+
+___
 
 ### Jira
 
